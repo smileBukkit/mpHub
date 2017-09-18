@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
+import net.md_5.bungee.api.ChatColor;
 import pl.inder00.minepixel.hub.channels.BungeeCord;
 import pl.inder00.minepixel.hub.data.Config;
 import pl.inder00.minepixel.hub.objects.Server;
@@ -26,20 +27,20 @@ public class InventoryClickListener implements Listener {
 			Player p = (Player) e.getWhoClicked();
 			ItemStack select = e.getCurrentItem();
 			Server s = Server.getUsingItemName(select.getItemMeta().getDisplayName()
-					.replace(cfg.enable[2].replace("&", "§"), "")
-					.replace(cfg.disable[2].replace("&", "§"), "")
-					.replace(cfg.full[2].replace("&", "§"), "")
-					.replace(cfg.current[2].replace("&", "§"), "")
+					.replace(ChatColor.translateAlternateColorCodes('&', cfg.enable[2]), "")
+					.replace(ChatColor.translateAlternateColorCodes('&', cfg.disable[2]), "")
+					.replace(ChatColor.translateAlternateColorCodes('&', cfg.full[2]), "")
+					.replace(ChatColor.translateAlternateColorCodes('&', cfg.current[2]), "")
 					.replace(" ", "")
 					);
 			p.closeInventory();
 			e.setCancelled(true);
 			if(s == null) {
 				p.sendMessage("§cSerwer "+select.getItemMeta().getDisplayName()
-						.replace(cfg.enable[2].replace("&", "§"), "")
-						.replace(cfg.disable[2].replace("&", "§"), "")
-						.replace(cfg.full[2].replace("&", "§"), "")
-						.replace(cfg.current[2].replace("&", "§"), "")
+						.replace(ChatColor.translateAlternateColorCodes('&', cfg.enable[2]), "")
+						.replace(ChatColor.translateAlternateColorCodes('&', cfg.disable[2]), "")
+						.replace(ChatColor.translateAlternateColorCodes('&', cfg.full[2]), "")
+						.replace(ChatColor.translateAlternateColorCodes('&', cfg.current[2]), "")
 						.replace(" ", "")
 						+" §cnie istnieje");
 				return;

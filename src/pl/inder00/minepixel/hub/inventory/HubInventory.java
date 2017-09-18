@@ -13,7 +13,7 @@ public class HubInventory {
 	public static Inventory getInventory() {
 		Config cfg = Config.getInst();
 		Inventory inv = Bukkit.createInventory(null, InventoryType.HOPPER, cfg.guiName);
-		for(Server s : Server.servers) {
+		for(Server s : Server.getServers()) {
 			inv.setItem(s.getInventorySlot(), Util.serverItemStack(s));
 		}
 		return inv;

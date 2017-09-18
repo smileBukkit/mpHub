@@ -26,7 +26,8 @@ public class BungeeCord {
             output.writeUTF("Connect");
             output.writeUTF(target);
         } catch (IOException e) {
-        	Bukkit.getConsoleSender().sendMessage("§4Nie mozna polaczyc sie do serwera "+target);
+        	e.printStackTrace();
+        	Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"Nie mozna polaczyc sie do serwera "+target+" ("+e.getCause().getMessage()+")");
         }
 
         player.sendPluginMessage(mpHub.getInst(), PLUGIN_CHANNEL, array.toByteArray());
@@ -38,7 +39,8 @@ public class BungeeCord {
             output.writeUTF("PlayerCount");
             output.writeUTF(target);
         } catch (IOException e) {
-        	Bukkit.getConsoleSender().sendMessage("§4Nie mozna okreslic ilosci graczy na serwerze ("+target+")");
+        	e.printStackTrace();
+        	Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"Nie mozna okreslic ilosci graczy na serwerze "+target+" ("+e.getCause().getMessage()+")");
         }
 
         Bukkit.getOnlinePlayers().iterator().next().sendPluginMessage(mpHub.getInst(), PLUGIN_CHANNEL, array.toByteArray());

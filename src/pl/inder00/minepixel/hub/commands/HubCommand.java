@@ -29,7 +29,7 @@ public class HubCommand implements CommandExecutor {
 			if(args[0].equalsIgnoreCase("reload")) {
 				FileManager.check();
 				p.sendMessage("§aPrzeladowywanie...");
-				Server.servers.clear();
+				Server.getServers().clear();
 				Config.getInst().reload();
 				p.sendMessage(" §8* §econfig.yml");
 				Server.reload();

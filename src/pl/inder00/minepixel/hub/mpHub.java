@@ -21,15 +21,12 @@ public class mpHub extends JavaPlugin implements PluginMessageListener {
 
 	private static mpHub inst;
 	public static mpHub getInst(){
-		if(inst == null) return new mpHub();
 		return inst;
-	}
-	public mpHub(){
-		inst = this;
 	}
 	
 	
 	public void onEnable() {
+		inst = this;
 		FileManager.check();
 		Config.getInst().load();
 		getServer().getMessenger().registerOutgoingPluginChannel(this, BungeeCord.PLUGIN_CHANNEL);
@@ -48,7 +45,7 @@ public class mpHub extends JavaPlugin implements PluginMessageListener {
 			Bukkit.getPluginManager().disablePlugin(this);
 			return;
 		}
-		Bukkit.getConsoleSender().sendMessage("§aWladowano mpHub (§c"+Server.servers.size()+"§a serwerow)");
+		Bukkit.getConsoleSender().sendMessage("§aWladowano mpHub (§c"+Server.serverAmount()+"§a serwerow)");
 	}
 	
 	

@@ -43,6 +43,7 @@ public class Config {
 	//=========================================================================
 	//Load
 	public void load(){
+		inst = this;
 		this.currentServer = cfg.getString("config.currentServer");
 		this.item = cfg.getInt("config.item-select.id");
 		this.name = cfg.getString("config.item-select.name").replace("&", "§");
@@ -72,11 +73,7 @@ public class Config {
 	//=========================================================================
 	//Instance
 	public static Config getInst(){
-		if(inst == null) return new Config();
 		return inst;
-	}
-	public Config(){
-		inst = this;
 	}
 	//=========================================================================
 

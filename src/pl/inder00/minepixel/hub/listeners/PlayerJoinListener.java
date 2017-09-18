@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import net.md_5.bungee.api.ChatColor;
 import pl.inder00.minepixel.hub.data.Config;
 
 public class PlayerJoinListener implements Listener {
@@ -24,9 +25,8 @@ public class PlayerJoinListener implements Listener {
 		itemmeta.setDisplayName(cfg.name);
 		List<String> loreOutput  = new ArrayList<String>();
 		for(String loreInput : cfg.lore) {
-			loreOutput.add(loreInput
-					.replace("{NICKNAME}", p.getName())
-					.replace("&", "§"));
+			loreOutput.add(ChatColor.translateAlternateColorCodes('&', loreInput
+					.replace("{NICKNAME}", p.getName())));
 		}
 		itemmeta.setLore(loreOutput);
 		item.setItemMeta(itemmeta);

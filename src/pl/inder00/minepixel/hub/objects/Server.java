@@ -6,13 +6,14 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 
+import net.md_5.bungee.api.ChatColor;
 import pl.inder00.minepixel.hub.mpHub;
 import pl.inder00.minepixel.hub.channels.BungeeCord;
 
 
 public class Server {
 	
-	public static List<Server> servers = new ArrayList<Server>();
+	private static ArrayList<Server> servers = new ArrayList<Server>();
 	
 	private String serverName;
 	private String fromVersion;
@@ -25,13 +26,19 @@ public class Server {
 	private String ipAdress;
 	private int port;
 	
+	public static int serverAmount() {
+		return servers.size();
+	}
+	public static ArrayList<Server> getServers(){
+		return servers;
+	}
+	
 	public Server(String serverName, String fromVersion, String itemName, List<String> itemLore, int maxPlayerCount
 			,String ip, int port) {
 		this.serverName = serverName;
 		this.fromVersion = fromVersion;
-		this.itemName = itemName.replace("&", "§");
+		this.itemName = ChatColor.translateAlternateColorCodes('&', itemName);
 		this.itemLore = itemLore;
-		Collections.replaceAll(this.itemLore, "&", "§");
 		this.maxPlayerCount = maxPlayerCount;
 		this.inventorySlot = servers.size();
 		this.serverEnabled = false;
