@@ -1,0 +1,45 @@
+config:
+  currentServer: 'lobby'
+  item-select:
+    id: 352
+    name: '&6Wybierz serwer'
+    lore: []
+    slot: 9
+    join-give: true
+status:
+  guiName: '&6Serwery'
+  enable: '373:0:&a[ON]'
+  disable: '374:0:&c[OFF]'
+  current: '373:8194:&e[Aktualny]'
+  full: '373:8201:&c[Pelny]'
+servers:
+  1:
+    serverName: 'lobby'
+    version: '1.7.x-1.12.x'
+    ip: 'localhost'
+    port: 7001
+    itemName: '&6Lobby'
+    maxPlayers: 100
+    itemLore:
+    - '&aAktualnie online: (&c{ONLINE}&a/&c{MAX}&a)'
+    - '&aAby wejsc na ten serwer potrzebujesz wersje klienta: &c{VERSION}'
+  2:
+    serverName: 'easyhc'
+    version: '1.7.x-1.12.x'
+    ip: 'localhost'
+    port: 7002
+    itemName: '&6EasyHC'
+    maxPlayers: 300
+    itemLore:
+    - '&aAktualnie online: (&c{ONLINE}&a/&c{MAX}&a)'
+    - '&aAby wejsc na ten serwer potrzebujesz wersje klienta: &c{VERSION}'
+  3:
+    serverName: 'skyblock'
+    version: '1.8.x-1.12.x'
+    ip: 'localhost'
+    port: 7003
+    itemName: '&6Skyblock'
+    maxPlayers: 0
+    itemLore:
+    - '&aAktualnie online: (&c{ONLINE}&a/&c{MAX}&a)'
+    - '&aAby wejsc na ten serwer potrzebujesz wersje klienta: &c{VERSION}'

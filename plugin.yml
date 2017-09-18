@@ -1,0 +1,7 @@
+name: mpHub
+main: pl.inder00.minepixel.hub.mpHub
+version: 0.9.7
+author: Inder00
+commands:
+  hub:
+    description: Aktualny serwer
